@@ -1,0 +1,28 @@
+{
+  "name": "angular-table-sort",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Per Jansson <per.r.jansson@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/perjansson/angular-table-sort",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-underscore": "~0.5.0",
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.5",
+    "faker": "Faker#~3.0.1",
+    "font-awesome": "~4.4.0",
+    "html5shiv": "~3.7.3",
+    "underscore": "~1.8.3"
+  }
+}
