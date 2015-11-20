@@ -1,9 +1,31 @@
+* {
+  font-family:"Courier New";
+  font-size: 14px;
+}
+
+body {
+  background-color: #FFF1E3;
+}
+
+h1 {
+  margin: 25px 0;
+}
+
+pre {
+  font-size: 10px;
+  margin: -10px 0 25px 0;
+}
+
+a, a:link, a:hover, a:active, a:visited  {
+  text-decoration: none;
+}
+
 /* when hiding */
-.ng-hide-add {
-  animation: 0.75s bounceOutRight ease;
+pre .ng-hide-add {
+  animation: 0.5s bounceOutRight ease;
 }
 
 /* when showing */
-.ng-hide-remove {
-  animation: 0.75s bounceInLeft ease;
+pre .ng-hide-remove {
+  animation: 0.5s bounceInLeft ease;
 }

@@ -16,23 +16,21 @@
 
   <div class="container">
     <div ng-controller="Controller as vm">
-      <div class="jumbotron">
         <a href ng-click="vm.showSort = !vm.showSort" ng-init="vm.showSort = false">
           <h1>Table sort</h1>
         </a>
         <pre ng-show="vm.showSort">vm.sort: {{ vm.sort | json }}</pre>
-      </div>
 
       <form>
         <div class="form-group">
-          <div class="input-group input-group-lg">
+          <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
             <input type="text" class="form-control" placeholder="Search companies" ng-model="vm.sort.query">
           </div>
         </div>
       </form>
 
-      <table class="table table-striped">
+      <table class="table">
         <thead>
           <tr>
             <th>
