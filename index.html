@@ -23,6 +23,17 @@
       </div>
     </div>
 
+    <form>
+      <div class="form-group">
+        <div class="input-group input-group-lg">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+          <input type="text" class="form-control" placeholder="Search companies" ng-model="vm.sort.searchQuery">
+
+        </div>
+      </div>
+    </form>
+
     <table class="table table-striped">
       <thead><tr>
         <th>
@@ -48,7 +59,7 @@
         </th>
       </tr></thead>
       <tbody>
-        <tr ng-repeat="company in vm.companies | orderBy:vm.sort.type:vm.sort.reverse">
+        <tr ng-repeat="company in vm.companies | orderBy:vm.sort.type:vm.sort.reverse | filter:vm.sort.searchQuery">
           <td ng-bind="company.name"></td>
           <td ng-bind="company.address"></td>
           <td ng-bind="company.phone"></td>
