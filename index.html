@@ -6,59 +6,67 @@
   <title>angular-table-sort</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></script>
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="app/style/style.css">
 </head>
 
 <body>
 
-  <div class="container" ng-controller="Controller as vm">
-    <div class="jumbotron">
-      <h1>Table-sort</h1>
-      <pre>vm.sort: {{ vm.sort | json }}</pre>
-    </div>
-
-    <form>
-      <div class="form-group">
-        <div class="input-group input-group-lg">
-          <div class="input-group-addon"><i class="fa fa-search"></i></div>
-          <input type="text" class="form-control" placeholder="Search companies" ng-model="vm.sort.query">
-        </div>
+  <div class="container">
+    <div ng-controller="Controller as vm">
+      <div class="jumbotron">
+        <a href ng-click="vm.showSort = !vm.showSort" ng-init="vm.showSort = false">
+          <h1>Table sort</h1>
+        </a>
+        <pre ng-show="vm.showSort">vm.sort: {{ vm.sort | json }}</pre>
       </div>
-    </form>
 
-    <table class="table table-striped">
-      <thead><tr>
-        <th>
-          <a href ng-click="vm.sort.type = 'name'; vm.sort.reverse = !vm.sort.reverse">
+      <form>
+        <div class="form-group">
+          <div class="input-group input-group-lg">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <input type="text" class="form-control" placeholder="Search companies" ng-model="vm.sort.query">
+          </div>
+        </div>
+      </form>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              <a href ng-click="vm.sort.type = 'name'; vm.sort.reverse = !vm.sort.reverse">
             Name
             <span ng-show="vm.sort.type == 'name' && !vm.sort.reverse" class="fa fa-caret-down"></span>
             <span ng-show="vm.sort.type == 'name' && vm.sort.reverse" class="fa fa-caret-up"></span>
           </a>
-        </th>
-        <th>
-          <a href ng-click="vm.sort.type = 'address'; vm.sort.reverse = !vm.sort.reverse">
+            </th>
+            <th>
+              <a href ng-click="vm.sort.type = 'address'; vm.sort.reverse = !vm.sort.reverse">
             Address
             <span ng-show="vm.sort.type == 'address' && !vm.sort.reverse" class="fa fa-caret-down"></span>
             <span ng-show="vm.sort.type == 'address' && vm.sort.reverse" class="fa fa-caret-up"></span>
           </a>
-        </th>
-        <th>
-          <a href ng-click="vm.sort.type = 'phone'; vm.sort.reverse = !vm.sort.reverse">
+            </th>
+            <th>
+              <a href ng-click="vm.sort.type = 'phone'; vm.sort.reverse = !vm.sort.reverse">
             Phone
             <span ng-show="vm.sort.type == 'phone' && !vm.sort.reverse" class="fa fa-caret-down"></span>
             <span ng-show="vm.sort.type == 'phone' && vm.sort.reverse" class="fa fa-caret-up"></span>
           </a>
-        </th>
-      </tr></thead>
-      <tbody>
-        <tr ng-repeat="company in vm.companies | orderBy:vm.sort.type:vm.sort.reverse | filter:vm.sort.query">
-          <td ng-bind="::company.name"></td>
-          <td ng-bind="::company.address"></td>
-          <td ng-bind="::company.phone"></td>
-        </tr>
-      </tbody>
-    </table>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="company in vm.companies | orderBy:vm.sort.type:vm.sort.reverse | filter:vm.sort.query">
+            <td ng-bind="::company.name"></td>
+            <td ng-bind="::company.address"></td>
+            <td ng-bind="::company.phone"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -67,16 +75,17 @@
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="bower_components/angular-underscore/angular-underscore.js"></script>
 
   <!--[if lt IE 9]>
     <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
   <![endif]-->
 
-  <script src="app/app.js"></script>
-  <script src="app/controller.js"></script>
-  <script src="app/service.js"></script>
-  <script src="app/sort.js"></script>
+  <script src="app/scripts/app.js"></script>
+  <script src="app/scripts/controller.js"></script>
+  <script src="app/scripts/service.js"></script>
+  <script src="app/scripts/sort.js"></script>
 
 </body>
 

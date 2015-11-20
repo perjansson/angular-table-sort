@@ -3,7 +3,8 @@
 
   angular.module('tableSortApp', [
     'angular-underscore',
-    'ngStorage'
+    'ngStorage',
+    'ngAnimate'
   ]);
 
 })();
