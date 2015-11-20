@@ -3,16 +3,16 @@
 
   angular
     .module('tableSortApp')
-    .controller('Controller', ['Service', Controller]);
+    .controller('Controller', ['Service', 'Sort', Controller]);
 
-  function Controller(Service) {
+  function Controller(Service, Sort) {
     var vm = this;
     vm.companies = null;
-    vm.sort = {
+    vm.sort = new Sort('companyKey', {
       type: 'name',
       reverse: false,
-      searchQuery: ''
-    };
+      query: ''
+    });
 
     activate();
 
@@ -24,6 +24,7 @@
     function updateCompanies(companies) {
       vm.companies = companies;
     }
+
   };
 
 })();

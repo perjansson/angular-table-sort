@@ -1,6 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('tableSortApp', ['angular-underscore']);
+  angular.module('tableSortApp', [
+    'angular-underscore',
+    'ngStorage'
+  ]);
 
 })();
