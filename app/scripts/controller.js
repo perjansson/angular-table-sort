@@ -9,7 +9,7 @@
     var vm = this;
     vm.companies = null;
     vm.sort = new Sort('companyKey', {
-      type: 'name',
+      by: 'name',
       reverse: false,
       query: ''
     });
