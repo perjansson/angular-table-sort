@@ -11,7 +11,7 @@
       transclude: true,
       template: '<a href ng-click="onClick()">' +
         '<span ng-transclude></span>' +
-        ' <i class="glyphicon" ng-class="{\'fa fa-caret-down\' : order === by && !reverse,  \'fa fa-caret-up\' : order===by && reverse}"></i>' +
+        ' <i class="glyphicon" ng-class="{\'fa fa-caret-up\' : order === by && !reverse,  \'fa fa-caret-down\' : order===by && reverse}"></i>' +
         '</a>',
       scope: {
         order: '=',
