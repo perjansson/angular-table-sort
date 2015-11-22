@@ -16,7 +16,7 @@
     }
 
     function getFakeCompanies() {
-      return _(200).times(function(n){
+      return _(100).times(function(n){
         return {
           name: faker.company.companyName(),
           address: faker.address.streetAddress(),

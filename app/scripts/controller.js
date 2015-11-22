@@ -8,6 +8,7 @@
   function Controller(Service, Sort) {
     var vm = this;
     vm.companies = null;
+    vm.onSort = onSort;
     vm.sort = new Sort('companyKey', {
       by: 'name',
       reverse: false,
@@ -23,6 +24,10 @@
 
     function updateCompanies(companies) {
       vm.companies = companies;
+    }
+
+    function onSort(by) {
+      console.log("### controller.onSort " + by);
     }
 
   };

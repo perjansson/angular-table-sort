@@ -16,7 +16,8 @@
       scope: {
         order: '=',
         by: '=',
-        reverse: '='
+        reverse: '=',
+        onSortClick: '='
       },
       link: function(scope, element, attrs) {
         scope.onClick = function() {
@@ -25,6 +26,10 @@
           } else {
             scope.by = scope.order;
             scope.reverse = false;
+          }
+
+          if (scope.onSortClick) {
+            scope.onSortClick(scope.by);
           }
         }
       }

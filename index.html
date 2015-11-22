@@ -33,9 +33,9 @@
       <table class="table">
         <thead>
           <tr>
-            <th pj-sort order="'name'" by="vm.sort.by" reverse="vm.sort.reverse">Name</th>
-            <th pj-sort order="'address'" by="vm.sort.by" reverse="vm.sort.reverse">Address</th>
-            <th pj-sort order="'phone'" by="vm.sort.by" reverse="vm.sort.reverse">Phone</th>
+            <th pj-sort order="'name'" by="vm.sort.by" reverse="vm.sort.reverse" on-sort-click="vm.onSort">Name</th>
+            <th pj-sort order="'address'" by="vm.sort.by" reverse="vm.sort.reverse" on-sort-click="vm.onSort">Address</th>
+            <th pj-sort order="'phone'" by="vm.sort.by" reverse="vm.sort.reverse" on-sort-click="vm.onSort">Phone</th>
           </tr>
         </thead>
         <tbody>
